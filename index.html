@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sakura Bowl - Home</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="ModeSwitch.js"></script>
+  <script src="auth.js"></script>
+
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="user.css">
+  
+</head>
+
+
+
+
+
+
+
+
+<body class="home-page">
+  <!-- Overlay для блокировки сайта -->
+  <div id="siteBlocker">
+  <div class="auth-gate">
+    <h2 id="authTitle">Welcome!</h2>
+    <form id="siteAuthForm">
+      <input type="text" id="authName" placeholder="Name" required>
+      <input type="email" id="authEmail" placeholder="Email" required>
+      <input type="password" id="authPassword" placeholder="Password" required>
+      <div id="errorBox" class="error-box"></div>
+      <button type="submit" id="authSubmitBtn">Sign Up</button>
+    </form>
+    <p id="switchAuth">Already have an account? <span id="toggleAuth">Log In</span></p>
+  </div>
+</div>
+
+
+  <div id="progressBar"></div>
+
+  <div class="container">
+
+
+    <!-- Header -->
+    <header class="header">
+      <nav>
+        <div class="logo">Oishiro</div>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="indexr.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="button-group">
+        <button id="openPopup" class="open-popup">Subscribe</button>
+        <div class="datetime" id="datetime"></div>
+        <button id="changeBg" class="bg-btn">Change Background</button>
+        
+        </div>
+        
+        <div id="userProfile" class="user-profile" style="display:none;">
+          <img src="images/user-icon.png" alt="User Icon" class="profile-icon">
+          <span id="userName"></span>
+          <button id="logoutBtn">Log Out</button>
+        </div>
+      
+
+      </nav>
+    </header>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="indexr.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <section class="promo-section">
+        <h2>Special Offers 🎁</h2>
+        <div class="promo-item">
+          <p>Use code <span class="promo-code">SAKURA10</span> for 10% off!</p>
+          <button class="copy-btn" data-code="SAKURA10">Copy</button>
+        </div>
+        <div class="promo-item">
+          <p>Use code <span class="promo-code">FREEROLL</span> for a free sushi roll!</p>
+          <button class="copy-btn" data-code="FREEROLL">Copy</button>
+        </div>
+        <div class="promo-item">
+          <p>Use code <span class="promo-code">RAMEN5</span> for ¥500 off ramen!</p>
+          <button class="copy-btn" data-code="RAMEN5">Copy</button>
+        </div>
+        <div id="toast"></div>
+      </section>
+      
+      
+
+
+
+
+    </aside>
+
+    <!-- Main -->
+    <main class="main-container">
+
+
+     
+       
+      <!-- Hero -->
+      <section id="main-hero" class="hero">
+        <div class="hero-left">
+          <h1>Welcome to Oishiro</h1>
+          <p>Authentic Japanese Cuisine with a Modern Twist</p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-bowl-wrapper">
+            <img src="images/bowl_home.png" alt="Japanese Bowl" class="hero-bowl">
+          </div>
+        </div>
+      </section>
+
+
+       
+      
+      <!-- Story -->
+      <section class="story">
+       
+        <img src="images/interier.jpg" alt="Restaurant Story">
+        <div>
+          <h2>Our Story</h2>
+          <p>
+            Oishiro restaurant was founded with a passion for authentic Japanese cuisine.
+            We bring fresh ingredients, traditional recipes, and modern presentation
+            to create an unforgettable dining experience.
+          </p>
+        </div>
+      </section>
+
+
+      <!--Restautant Fun Facts-->
+      <section class="restaurant-info" id="restaurantInfo">
+        <h2>Fun Facts About Oishiro</h2>
+        <p id="restaurantText">
+            Oishiro brings authentic Japanese flavors with a modern twist!
+        </p>
+        <button id="infoBtn">Show Fun Fact</button>
+      </section>
+
+      <!-- Lazy Loading Gallery -->
+    <section class="restaurant-gallery">
+      <h2>Our Restaurant</h2>
+      <div class="gallery-container">
+        <img class="lazy" data-src="images/restaurant1.jpg" alt="Restaurant Interior">
+        <img class="lazy" data-src="images/restaurant2.jpg" alt="Cozy Dining Area">
+        <img class="lazy" data-src="images/restaurant3.jpg" alt="Chef in Kitchen">
+      </div>
+    </section>
+      <!-- Stats Section -->
+
+      <section class="stats-section">
+        <h2>Oishiro in Numbers</h2>
+        <div class="stats-grid">
+          <div class="stat"><span class="count" data-target="1500">0</span><p>Happy Customers</p></div>
+          <div class="stat"><span class="count" data-target="120">0</span><p>Dishes Served</p></div>
+          <div class="stat"><span class="count" data-target="15">0</span><p>Years of Experience</p></div>
+        </div>
+      </section>
+
+
+
+      <!-- Season Specials -->
+  <section class="new-dishes">
+  <h2>Season Specials</h2>
+  <div class="dish-grid">
+   
+    <div class="dish-card">
+      <img src="images/salmon_poke.jpg" alt="Salmon Poke">
+      <div class="overlay"><p>Fresh salmon poke bowl</p></div>
+      <h3>Salmon Poke</h3>
+      <p>¥1200</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+     
+    </div>
+    <div class="dish-card">
+      <img src="images/tuna_roll.jpg" alt="Tuna Roll">
+      <div class="overlay"><p>Classic tuna sushi roll</p></div>
+      <h3>Tuna Roll</h3>
+      <p>¥950</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="dish-card">
+      <img src="images/ramen_deluxe.jpg" alt="Ramen Deluxe">
+      <div class="overlay"><p>Deluxe ramen with shrimp and egg</p></div>
+      <h3>Ramen Deluxe</h3>
+      <p>¥1500</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+     
+    </div>
+
+
+
+
+    <div class="dish-card">
+      <img src="images/sashimi_set.jpg" alt="Sashimi Set">
+      <div class="overlay"><p>Assorted fresh sashimi</p></div>
+      <h3>Sashimi Set</h3>
+      <p>¥1800</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
+    </div>
+    <div class="dish-card">
+      <img src="images/tempura_mix.jpg" alt="Tempura Mix">
+      <div class="overlay"><p>Crispy tempura assortment</p></div>
+      <h3>Tempura Mix</h3>
+      <p>¥1100</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
+    </div>
+     
+
+
+    <div class="dish-card">
+      <img src="images/matcha_cheesecake.jpg" alt="Matcha Cheesecake">
+      <div class="overlay"><p>Sweet matcha cheesecake</p></div>
+      <h3>Matcha Cheesecake</h3>
+      <p>¥700</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
+    </div>
+   
+
+
+    <div class="dish-card">
+      <img src="images/ebi_tempura.jpg" alt="Ebi Tempura">
+      <div class="overlay"><p>Golden fried shrimp tempura</p></div>
+      <h3>Ebi Tempura</h3>
+      <p>¥1200</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+    </div>
+    <div class="dish-card">
+      <img src="images/maguro.jpg" alt="Maguro Sashimi">
+      <div class="overlay"><p>Fresh tuna sashimi</p></div>
+      <h3>Maguro Sashimi</h3>
+      <p>¥1500</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+
+
+    </div>
+   
+
+
+    <div class="dish-card">
+      <img src="images/ice_cream.jpg" alt="Matcha Ice Cream">
+      <div class="overlay"><p>Creamy green tea ice cream</p></div>
+      <h3>Matcha Ice Cream</h3>
+      <p>¥600</p>
+
+
+      <div class="like-box">
+      <i class="heart">♡</i>
+      <span class="count">0</span> Likes
+      </div>
+    </div>
+
+
+   
+
+
+   
+
+
+     
+
+
+  </div>
+</section>
+
+
+
+
+      <!-- Chefs -->
+      <section class="chefs">
+        <h2>Our Chefs</h2>
+        <div class="chef-grid">
+          <div class="chef-card"><img src="images/chef_1.jpg"><h3>Chef Hiroshi</h3><p>20 years experience</p></div>
+          <div class="chef-card"><img src="images/chef_2.jpg"><h3>Chef Aiko</h3><p>15 years experience</p></div>
+          <div class="chef-card"><img src="images/shef_3.jpg"><h3>Chef Kenji</h3><p>12 years experience</p></div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Team: Oishiro | Members: Li Danel, Kuzhentayeva Ramina</p>
+     
+    </footer>
+
+
+  </div>
+<!-- Popup Subscription -->
+<div class="popup">
+  <div class="popup-content">
+    <button id="closePopup" class="close">&times;</button>
+    <h2>Subscribe to our Newsletter</h2>
+    <form id="subscribeForm">
+      <input type="text" id="subscribeName" placeholder="Name">
+      <input type="email" id="subscribeEmail" placeholder="Email">
+      <input type="password" id="subscribePassword" placeholder="Password">
+      <input type="password" id="subscribeConfirmPassword" placeholder="Confirm Password">
+      <div id="formError" class="error-box"></div>
+      <button type="submit" id="subscribeBtn">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+<script src="NavKeyboard.js"></script>
+<script src="home.js"></script>
+<script src="cont.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+[
+  {
+    "address": "45 Sakura Street, Almaty, Kazakhstan",
+    "hours": "Open daily: 10:00 - 22:00",
+    "fact": "Our chef studied traditional sushi art in Tokyo for 7 years!"
+  },
+  {
+    "address": "12 Kyoto Avenue, Astana, Kazakhstan",
+    "hours": "Open: Mon–Sun, 11:00 - 23:00",
+    "fact": "We serve over 50 varieties of sushi and rolls!"
+  },
+  {
+    "address": "5 Fuji Lane, Shymkent, Kazakhstan",
+    "hours": "Open: 9:00 - 21:00",
+    "fact": "We offer an authentic Japanese tea ceremony experience!"
+  }
+]

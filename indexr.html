@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Oishiro</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="jquery-indexr.js"></script>
+
+</head>
+<body class="about-page">
+  <!-- Scroll Progress Bar -->
+<div class="scroll-progress-container">
+  <div class="scroll-progress-bar"></div>
+</div>
+
+
+   <div class="container">
+  <!--header-->
+  <header class="header"> 
+  <nav>
+    <div class="logo">Oishiro</div>
+    <!-- Кнопка или селектор между логотипом и меню -->
+    <div class="middle-button">
+      <select id="lang-select-header">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="kz">Қазақша</option>
+      </select>
+    </div>
+
+      <!-- === Theme Switch Button === -->
+    <div class="theme-toggle">
+       <button id="theme-btn" class="theme-toggle">Switch to Night Mode</button>
+    </div>
+
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="indexr.html" class="active" tabindex="0">About</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Sidebar -->
+<aside class="sidebar">
+  <h3>Contact Us</h3>
+  <ul>
+    <li><a href="contact.html">Reserve a Table</a></li>
+    <li><a href="contact.html">Contact Information</a></li>
+  </ul>
+   <hr>
+  <!-- Search Special Offers -->
+  <section class="search-offers-section">
+    <h4>Search Special Offers</h4>
+    <input type="text" id="offer-search" placeholder="Type a keyword...">
+  </section>
+
+  <!-- Контейнер для рейтинга -->
+  <section class="rating-section">
+    <div class="rating-container">
+      <h4>Rate Our Website</h4>
+      <div class="stars">
+        <i class="star">★</i>
+        <i class="star">★</i>
+        <i class="star">★</i>
+        <i class="star">★</i>
+        <i class="star">★</i>
+      </div>
+      <p id="rating-message">Click on a star to rate!</p>
+    </div>
+  </section>
+
+
+
+<!-- Random Japanese Food Fact -->
+<div class="random-fact">
+  <h3>Random Japanese Food Fact</h3>
+  <div id="fact-box">Click the button to discover an interesting fact!</div>
+  <button id="fact-btn">Show Random Fact</button>
+</div>
+
+
+
+</aside>
+
+
+
+ <main class="main-content">
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="hero-left">
+    <h1>About Us</h1>
+    <p>Authentic Japanese Cuisine with a Modern Twist</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-h1-wrapper">
+      <img src="image/p1.jpg" alt="Rotating p1" class="hero-h1">
+    </div>
+  </div>
+</section>
+ <!-- task1 ass7 -->
+<div class="search-container">
+  <input type="text" id="gallerySearch" placeholder="Search events...">
+</div>
+
+<section class="gallery">
+  <h2>Upcoming Events</h2>
+  <div class="gallery-container">
+    <!-- Событие 1: Живое исполнение музыки -->
+    <div class="gallery-item">
+      <img src="image/live_music.jpg" alt="Live Music">
+      <div class="caption">Live Music Night</div>
+    </div>
+
+    <!-- Событие 2: Кулинарный мастер-класс -->
+    <div class="gallery-item">
+      <img src="image/cooking_class.jpg" alt="Cooking Class">
+      <div class="caption">Cooking Class with Chef</div>
+    </div>
+
+    <!-- Событие 3: Тематика вечеринки -->
+    <div class="gallery-item">
+      <img src="image/party_theme.jpg" alt="Themed Party">
+      <div class="caption">Themed Party Night</div>
+    </div>
+
+    <!-- Событие 4: Вечер кулинарных открытий -->
+    <div class="gallery-item">
+      <img src="image/culinary_night.jpg" alt="Culinary Discovery Night">
+      <div class="caption">Culinary Discovery Night</div>
+    </div>
+
+    <!-- Событие 5: Вечер японских традиций -->
+    <div class="gallery-item">
+      <img src="image/japanese_traditions.jpg" alt="Japanese Traditions Night">
+      <div class="caption">Japanese Traditions Night</div>
+    </div>
+
+    <!-- Событие 6: Вечер с дегустацией вин -->
+    <div class="gallery-item">
+      <img src="image/wine_tasting.jpg" alt="Wine Tasting">
+      <div class="caption">Wine Tasting Event</div>
+    </div>
+
+    <!-- Событие 7: Семинар по японской кухне -->
+    <div class="gallery-item">
+      <img src="image/japanese_cuisine_workshop.jpg" alt="Japanese Cuisine Workshop">
+      <div class="caption">Japanese Cuisine Workshop</div>
+    </div>
+
+    <!-- Событие 8: Вечер с суши мастер-классом -->
+    <div class="gallery-item">
+      <img src="image/sushi_workshop.jpg" alt="Sushi Workshop">
+      <div class="caption">Sushi Making Workshop</div>
+    </div>
+
+    <!-- Событие 9: Гастрономический тур по Японии -->
+    <div class="gallery-item">
+      <img src="image/japan_food_tour.jpg" alt="Japan Food Tour">
+      <div class="caption">Japan Food Tour</div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Interior Design Section -->
+<section class="interior">
+  <div class="section-title">
+    <h2>Interior Design</h2>
+  </div>
+  
+  <div class="interior-images">
+  <img class="lazy" data-src="image/inter1.jpg" alt="Interior Design 1" src="">
+  <img class="lazy" data-src="image/inter2.jpg" alt="Interior Design 2" src="">
+  <img class="lazy" data-src="image/inter3.jpg" alt="Interior Design 3" src="">
+</div>
+
+
+
+  
+</section>
+
+
+  <section class="special-offers">
+  <h2 class="special-offers-heading">Special Offers</h2>
+
+  <!-- Offer 1: Birthday Discount -->
+  <div class="offer">
+    <div class="offer-text">
+      <h3>Birthday Discount</h3>
+      <p>Get 15% off on your birthday! Celebrate with us and make your special day even better.</p>
+      <button class="offer-btn">Use Offer</button>
+    </div>
+    <div class="offer-img">
+      <img src="image/birthday-offer.jpg" alt="Birthday Discount">
+    </div>
+  </div>
+
+  <!-- Offer 2: First Delivery Free -->
+  <div class="offer">
+    <div class="offer-text">
+      <h3>First Delivery Free</h3>
+      <p>Your first delivery is on us! Enjoy the convenience of having our delicious dishes delivered to your door for free.</p>
+      <button class="offer-btn">Use Offer</button>
+    </div>
+    <div class="offer-img">
+      <img src="image/delivery-offer.jpg" alt="First Delivery Free">
+    </div>
+  </div>
+
+  <!-- Offer 3: Free Drink with Any Meal -->
+  <div class="offer">
+    <div class="offer-text">
+      <h3>Free Drink with Any Meal</h3>
+      <p>Order any meal and get a free drink! Enjoy your meal with a refreshing beverage on us.</p>
+      <button class="offer-btn">Use Offer</button>
+    </div>
+    <div class="offer-img">
+      <img src="image/drink-offer.jpg" alt="Free Drink with Any Meal">
+    </div>
+  </div>
+</section>
+<!-- Modal (всплывающее окно) -->
+<div id="offer-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+  </div>
+</div>
+
+<div class="search-container">
+  <input type="text" id="faq-search" placeholder="Search question...">
+  <ul id="faq-suggestions"></ul>
+</div>
+
+    <!-- Вопрос 1 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What payment methods does your restaurant accept?</span>
+            <button class="open-btn">Open</button>
+        </div>
+        <div class="faq-content">
+            <p>We accept cash, bank cards (Visa, MasterCard, Mir), and online payments via Kaspi Pay and Apple Pay.</p>
+        </div>
+    </div>
+
+    <!-- Вопрос 2 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Do I need to book a table in advance?</span>
+            <button class="open-btn">Open</button>
+        </div>
+        <div class="faq-content">
+            <p>We recommend booking in advance, especially during evenings and weekends. You can make a reservation through our website or by phone.</p>
+        </div>
+    </div>
+
+    <!-- Вопрос 3 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Is it possible to host private events at your restaurant?</span>
+            <button class="open-btn">Open</button>
+        </div>
+        <div class="faq-content">
+            <p>Yes, we have private dining areas suitable for events such as birthdays, corporate dinners, and celebrations. Please contact us in advance to discuss the details.</p>
+        </div>
+    </div>
+
+    <!-- Вопрос 4 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Do you offer takeaway or delivery services?</span>
+            <button class="open-btn">Open</button>
+        </div>
+        <div class="faq-content">
+            <p>Absolutely! We offer both takeaway and city-wide delivery. You can place your order through our website or by phone.</p>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Customer Reviews Section -->
+<section class="reviews">
+  <div class="section-title">
+    <h2>Customer Reviews</h2>
+  </div>
+
+  <!-- Отзывы -->
+  <div class="review">
+    <div class="review-text">
+      <p>"The sushi was amazing! Fresh ingredients, great taste, and fantastic service. I’ll definitely be back!"</p>
+    </div>
+    <div class="reviewer">
+      <img src="image/m1.jpg" alt="Reviewer 1">
+      <p><strong>John Doe</strong></p>
+      <p>Food Lover</p>
+    </div>
+  </div>
+
+  <div class="review">
+    <div class="review-text">
+      <p>"Oishiro is my go-to restaurant for Japanese cuisine. The ambiance is cozy and the dishes are consistently delicious!"</p>
+    </div>
+    <div class="reviewer">
+      <img src="image/m2.jpg" alt="Reviewer 2">
+      <p><strong>Jane Smith</strong></p>
+      <p>Food Critic</p>
+    </div>
+  </div>
+
+  <div class="review">
+    <div class="review-text">
+      <p>"Absolutely loved the experience. Every dish we ordered was full of flavor, and the staff was very attentive."</p>
+    </div>
+    <div class="reviewer">
+      <img src="image/m3.jpg" alt="Reviewer 3">
+      <p><strong>Mark Johnson</strong></p>
+      <p>Businessman</p>
+    </div>
+  </div>
+
+  <div class="review">
+    <div class="review-text">
+      <p>"A hidden gem! Perfect for date nights. The sushi rolls were phenomenal, and the atmosphere was intimate."</p>
+    </div>
+    <div class="reviewer">
+      <img src="image/w1.jpg" alt="Reviewer 4">
+      <p><strong>Emily Davis</strong></p>
+      <p>Casual Diner</p>
+    </div>
+  </div>
+</section>
+</main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Team: Oishiro | Members: Li Danel, Kuzhentayeva Ramina |</p>
+  </footer>
+</div> 
+
+<script src="inder.js"></script>
+<script src="cont.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="jquery-indexr.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffe6f0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#logoutBtn {
+  background-color: #ffb6c1;
+  border: none;
+  border-radius: 12px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+#logoutBtn:hover {
+  background-color: #ff99b3;
+}

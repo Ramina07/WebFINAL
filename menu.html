@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Food Vibes</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="ModeSwitch.js"></script>
+  <script src="auth.js"></script>
+
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="user.css">
+</head>
+
+
+
+
+
+<body class="menu-page">
+  <div id="siteBlocker" style="display:flex;">
+  <div class="auth-gate">
+    <h2 id="authTitle">Sign Up</h2>
+    <form id="siteAuthForm">
+      <input type="text" id="authName" placeholder="Name" required>
+      <input type="email" id="authEmail" placeholder="Email" required>
+      <input type="password" id="authPassword" placeholder="Password" required>
+      <button type="submit" id="authSubmitBtn">Sign Up</button>
+    </form>
+    <div id="errorBox" class="error-box"></div>
+    <p>Already have an account? <span id="toggleAuth">Log In</span></p>
+  </div>
+</div>
+
+  <div id="progressBar"></div>
+
+  <div class="container">
+
+
+    <!-- Header -->
+    <header class="header">
+      <nav>
+        <div class="logo">Oishiro</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="indexr.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="datetime" id="datetime"></div>
+        <div id="userProfile" class="user-profile" style="display:none;">
+          <img src="images/user-icon.png" alt="User Icon" class="profile-icon">
+          <span id="userName"></span>
+          <button id="logoutBtn">Log Out</button>
+        </div>
+        
+        
+      </nav>
+    </header>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Sections</h3>
+      <ul>
+        <li><a href="#soups">Soups & Ramen</a></li>
+        <li><a href="#mains">Main Courses</a></li>
+        <li><a href="#desserts">Desserts</a></li>
+      </ul>
+
+      
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main-container">
+      <!-- Hero -->
+      <section class="menu-hero">
+        <div class="menu-hero-left">
+          <h2>Our Menu</h2>
+          <p>Discover the authentic taste of Japanese cuisine crafted by our chefs!</p>
+          <button id="styleToggleBtn">Change Style</button>
+        </div>
+        <div class="menu-hero-right">
+          <div class="menu-bowl-wrapper">
+            <img src="images/bowl_home.png" alt="Menu" class="menu-bowl">
+          </div>
+        </div>
+      </section>
+
+      <!-- Search Section -->
+    <section id="searchSection">
+      <h2>Search Dishes</h2>
+      <input type="text" id="searchInput" placeholder="Search dishes...">
+      <ul id="suggestions" class="suggestions"></ul>
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="highlight-section">
+      <h3>Menu Highlights</h3>
+      <p>Our restaurant offers Salmon Poke, Ramen Deluxe, and Matcha Ice Cream.</p>
+      <input type="text" id="highlightInput" placeholder="Enter word to highlight">
+      <button id="highlightBtn">Highlight</button>
+    </section>
+     
+      <!-- Soups and Ramen -->
+       <section class="accordion-container">
+        <div class="accordion-title">🍲 Soups & Ramen</div>
+        <div class="accordion-content">
+          <section id="soups">
+            <h2 class="section-title">🍲 Soups and Ramen</h2>
+            <label for="productFilter">Filter Dishes:</label>
+            <select id="productFilterSoups">
+              <option value="all">All</option>
+              <option value="price-low">Price ≤ $10</option>
+              <option value="price-high">Price > $10</option>
+             
+            </select>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <img src="images/soba_soup.jpg" alt="Soba soup">
+                <div class="overlay"><p>Soba noodle soup</p></div>
+                <h3 class="menu-item-title">Soba Soup</h3>
+                <p>Traditional buckwheat noodles in light soy broth with green onions.</p>
+                <strong>$8</strong>
+              </div>
+            <div class="menu-item">
+              <img src="images/ramen_deluxe.jpg" alt="Ramen Deluxe">
+              <div class="overlay"><p>Pork ramen with shrimp</p></div>
+              <h3 class="menu-item-title">Ramen Deluxe</h3>
+              <p>Rich pork broth ramen with shrimp, egg, nori, and fresh vegetables.</p>
+              <strong>$14</strong>
+            </div>
+            <div class="menu-item">
+              <img src="images/shoyo_ramen.jpg" alt="Shoyu Ramen">
+              <div class="overlay"><p>Soy sauce ramen</p></div>
+              <h3 class="menu-item-title">Shoyu Ramen</h3>
+              <p>Classic soy sauce ramen with chicken, bamboo shoots, and soft egg.</p>
+              <strong>$12</strong>
+          </div>
+        </div>
+
+
+        <!--Контейнер для доп блюд-->
+        <div id="moreDishesSoups" class="menu-grid"></div>
+        <button id="loadMoreBtnSoups" class="load-more-btn">Load More Dishes</button>
+
+
+      </section>
+    </div>
+  </section>
+  <!-- Main Courses -->
+   <section class="accordion-container">
+      <div class="accordion-title">🍝 Main Courses</div>
+      <div class="accordion-content">
+        <section id="mains">
+        <h2 class="section-title">🍝 Main Courses</h2>
+        <label for="productFilter">Filter Dishes:</label>
+        <select id="productFilterMains">
+          <option value="all">All</option>
+          <option value="price-low">Price ≤ $10</option>
+          <option value="price-high">Price > $10</option>
+         
+        </select>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <img src="images/katsudon.jpg" alt="Katsudon">
+            <div class="overlay"><p>Pork cutlet rice bowl</p></div>
+            <h3 class="menu-item-title">Katsudon</h3>
+            <p>Deep-fried pork cutlet served over rice with egg and sweet soy sauce.</p>
+            <strong>$13</strong>
+            </div>
+        <div class="menu-item">
+          <img src="images/Salmon_Teriyaki.jpg" alt="Salmon Teriyaki Steak">
+          <div class="overlay"><p>Grilled salmon teriyaki</p></div>
+          <h3 class="menu-item-title">Salmon Teriyaki</h3>
+          <p>Grilled salmon glazed with teriyaki sauce, served with rice and salad.</p>
+          <strong>$18</strong>
+        </div>
+      <div class="menu-item">
+        <img src="images/sashimi_set.jpg" alt="Sashimi Set">
+        <div class="overlay"><p>Assorted sashimi set</p></div>
+        <h3 class="menu-item-title">Sashimi Set</h3>
+        <p>Assorted fresh sashimi: tuna, salmon, yellowtail, and white fish.</p>
+        <strong>$22</strong>
+      </div>
+    </div>
+    <!--Контейнер для доп блюд-->
+    <div id="moreDishesMains" class="menu-grid"></div>
+    <button id="loadMoreBtnMains" class="load-more-btn">Load More Dishes</button>
+  </section>
+  </div>
+</section>
+
+
+<!-- Desserts -->
+ <section class="accordion-container">
+  <div class="accordion-title">🍰 Desserts</div>
+  <div class="accordion-content">
+<section id="desserts">
+  <h2 class="section-title">🍰 Desserts</h2>
+  <label for="productFilter">Filter Dishes:</label>
+  <select id="productFilterDesserts">
+    <option value="all">All</option>
+    <option value="price-low">Price ≤ $10</option>
+    <option value="price-high">Price > $10</option>
+   
+  </select>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="images/Dorayaki.jpg" alt="Dorayaki">
+      <div class="overlay"><p>Red bean pancake</p></div>
+      <h3 class="menu-item-title">Dorayaki</h3>
+      <p>Fluffy Japanese pancakes filled with sweet red bean paste.</p>
+      <strong>$6</strong>
+    </div>
+    <div class="menu-item">
+      <img src="images/takoyaki.jpg" alt="Takoyaki">
+      <div class="overlay"><p>Octopus balls snack</p></div>
+      <h3 class="menu-item-title">Crispy Takoyaki</h3>
+      <p>Famous Osaka street snack with octopus, topped with bonito flakes.</p>
+      <strong>$9</strong>
+    </div>
+    <div class="menu-item">
+      <img src="images/ice_cream.jpg" alt="Green Tea Ice Cream">
+      <div class="overlay"><p>Green tea ice cream</p></div>
+      <h3 class="menu-item-title">Green Tea Ice Cream</h3>
+      <p>Creamy matcha ice cream with a rich and refreshing flavor.</p>
+      <strong>$5</strong>
+    </div>
+  </div>
+  <!--Контейнер для доп блюд-->
+  <div id="moreDishesDesserts" class="menu-grid"></div>
+  <button id="loadMoreBtnDesserts" class="load-more-btn">Load More Dishes</button>
+</section>
+  </div>
+ </section>
+</main>
+<!-- Footer -->
+<footer class="footer">
+  <p>Team: Oishiro | Members: Li Danel, Kuzhentayeva Ramina</p>
+</footer>
+</div>
+
+
+<script src="NavKeyboard.js"></script>
+<script src="menu.js"></script>
+<script src="cont.js"></script>
+
+
+</body>
+</html>
+
+
+
+

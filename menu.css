@@ -1,0 +1,894 @@
+/* === Общие стили === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* === Load More Button === */
+#loadMoreBtn {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  background-color: #b22222;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+
+#loadMoreBtn:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.05);
+
+
+}
+
+
+/* Стиль кнопки Load More */
+/* === Load More Button === */
+.load-more-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 20px auto;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #b22222, #ff6b6b);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.load-more-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff6b6b, #b22222);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+
+.load-more-btn:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+
+
+/* === More Dishes Container === */
+#moreDishesContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+
+
+
+/* === Dynamic Style Buttons === */
+.style-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.style-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #b22222;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+.style-buttons button:hover {
+  background-color: #d43f3a;
+  transform: scale(1.05);
+}
+
+
+
+
+/*==datetime==*/
+.datetime {
+  font-size: 0.9rem;
+  color: #555;
+  background: #fff0f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+
+.accordion-title {
+  background: #f7d1cd;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 12px;
+}
+
+
+.accordion-content.active {
+  padding: 12px;
+}
+
+
+.contact-section {
+  background: #fdf1ec;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.contact-section input,
+.contact-section textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+
+.contact-section button {
+  background-color: #e8b4b8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #333;
+}
+
+
+/*===Media queries===*/
+
+/* =============================
+   Base styles (mobile-first)
+   ============================= */
+body {
+  font-size: 16px;
+}
+.container {
+  display: flex;
+  flex-direction: column; /* header -> sidebar -> main */
+}
+.header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.header nav ul {
+  display: flex;
+  gap: 20px;       /* расстояние между пунктами меню */
+  margin-left: 50px; /* отступ от логотипа */
+  list-style: none;
+}
+
+
+/* Sidebar как блок под header */
+.sidebar {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Main content */
+.main-container {
+  padding: 10px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+/* Эффект при наведении на красный контейнер */
+.theme-toggle:hover {
+  background-color: #8b1a1a;
+}
+
+/* === 🌙 Глобальная тёмная тема === */
+body.night-mode {
+  background-color: #1e1e1e; /* общий тёмный фон */
+  color: #ffc0cb; /* светло-розовый текст */
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Все внутренние блоки немного светлее, чтобы не сливались */
+body.night-mode * {
+  background-color: rgba(40, 40, 40, 0.8); /* мягкий тёмно-серый фон с прозрачностью */
+  color: #ffc0cb !important;
+  border-color: #444 !important;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Чтобы картинки и медиа не затемнялись */
+body.night-mode img,
+body.night-mode video {
+  background-color: transparent !important;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+/* Кнопки остаются читаемыми */
+body.night-mode button {
+  background-color: #3a3a3a !important;
+  color: #ffc0cb !important;
+  border: 1px solid #555 !important;
+}
+
+/* Поля ввода */
+body.night-mode input,
+body.night-mode textarea,
+body.night-mode select {
+  background-color: #2e2e2e !important;
+  color: #ffc0cb !important;
+  border: 1px solid #555 !important;
+}
+/* Ночной режим только для контейнера поиска */
+body.night-mode #searchSection {
+  background-color: #1e1e1e;  /* тёмный фон контейнера */
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Поле ввода в контейнере поиска */
+body.night-mode #searchSection input {
+  background-color: #2e2e2e;  /* тёмный фон поля */
+  border: 1px solid #555;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+
+
+
+
+
+
+/* =============================
+   Smartphones (max-width: 600px)
+   ============================= */
+@media (max-width: 600px) {
+  .header nav .logo,
+  .header nav .datetime {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .menu-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .menu-bowl {
+    width: 80%;
+    margin: 15px auto;
+  }
+  .sidebar {
+    order: 2; /* после header */
+    width: 100%;
+  }
+  .menu-grid {
+    grid-template-columns: 1fr; /* 1 колонка */
+  }
+}
+
+/* =============================
+   Tablets (601px - 1024px)
+   ============================= */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* header -> sidebar -> main */
+  }
+  .header nav {
+    justify-content: space-between;
+  }
+  .sidebar {
+    width: 100%;
+    display: block;
+    order: 2;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  }
+}
+
+/* =============================
+   Desktop (1025px+)
+   ============================= */
+@media (min-width: 1025px) {
+  .container {
+    flex-direction: row; /* sidebar слева, main справа */
+  }
+  .sidebar {
+    width: 250px;
+    order: 0;
+  }
+  .main-container {
+    flex: 1;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  }
+}
+
+
+
+
+
+
+
+/* === Контейнер === */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 20px;
+  padding: 20px;
+}
+
+
+/* === Header === */
+.header {
+  grid-area: header;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+}
+
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b22222;
+}
+
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #b22222;
+}
+
+
+/* === Sidebar === */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 80px;
+}
+
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  color: #b22222;
+  margin-bottom: 20px;
+}
+
+
+.sidebar ul {
+  list-style: none;
+}
+
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+
+.sidebar ul li a:hover {
+  color: #b22222;
+}
+
+
+/* === Main === */
+.main-container {
+  grid-area: main;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+/* === Hero === */
+/*menu dynamic*/
+.menu-hero {
+  transition: background-color 0.5s ease, transform 0.5s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 10%;
+  background: #fff5f5;
+  gap: 40px;
+}
+
+
+.menu-hero-left h2 {
+  font-size: 2rem;
+  color: #b22222;
+}
+
+
+.menu-hero-left p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+.menu-bowl-wrapper {
+  max-width: 280px;
+  
+}
+
+
+.menu-bowl {
+  width: 100%;
+  height: auto;
+  animation: spin 12s linear infinite;
+}
+/*button change style*/
+#styleToggleBtn {
+  padding: 8px 20px; /* больше кнопка */
+  font-size: 1rem; /* крупнее текст */
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #b22222, #ff6b6b); /* градиент */
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+
+#styleToggleBtn:hover {
+  transform: scale(1.1); /* чуть больше при hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  background: linear-gradient(45deg, #ff6b6b, #b22222); /* инвертируем градиент */
+}
+
+
+.highlighted {
+  background-color: #ffe4b5;
+  transform: scale(1.05);
+}
+
+
+
+.hidden {
+  display: none;
+}
+
+
+/*animation bowl*/
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* === Menu Grid === */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+
+  /*grid-template-columns: repeat(3, 1fr);*/
+  gap: 25px;
+  padding: 40px 10%;
+}
+
+
+.menu-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+
+.menu-item img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(219, 127, 127, 0.6);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+
+.menu-item:hover .overlay {
+  opacity: 1;
+}
+
+
+.menu-page h2.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #b22222;
+  margin: 40px 0 25px 0;
+}
+
+/* === Scroll Progress Bar === */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4d4d, #b22222);
+  box-shadow: 0 2px 5px rgba(255, 77, 77, 0.4);
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+
+/* ================= Highlight Section ================= */
+.highlight-section {
+  background-color: #fff4f4;
+  border: 2px solid #ff4d4d;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin: 25px auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.2);
+  position: relative;
+}
+
+.highlight-section h3 {
+  color: #b22222;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.highlight-section p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.highlight-section input {
+  width: 65%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ff4d4d;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* добавлено для корректной ширины */
+}
+
+.highlight-section input:focus {
+  border-color: #a10000;
+  box-shadow: 0 0 10px rgba(178, 34, 34, 0.4);
+}
+
+.highlight-section button {
+  padding: 10px 18px;
+  margin-left: 10px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.highlight-section button:hover {
+  background-color: #a10000;
+  transform: scale(1.05);
+}
+
+/* === Search Section === */
+#searchSection {
+  background-color: #fff4f4;
+  border: 2px solid #ff4d4d;
+  border-radius: 12px;
+  padding: 25px 30px;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(255, 77, 77, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchSection:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 77, 77, 0.3);
+}
+
+#searchSection h2 {
+  font-size: 1.8rem;
+  color: #b22222;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #ff4d4d;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#searchInput:focus {
+  border-color: #a10000;
+  box-shadow: 0 0 12px rgba(178, 34, 34, 0.4);
+}
+
+#suggestions {
+  margin-top: 15px;
+  list-style: none;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+#suggestions li {
+  padding: 10px 15px;
+  background-color: #fff0f0;
+  border: 1px solid #ffb6b6;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#suggestions li:hover {
+  background-color: #ff6b6b;
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* ================= Highlighted Text ================= */
+.highlighted {
+  background-color: #ffe4b5;
+  padding: 2px 5px;
+  border-radius: 4px;
+  display: inline-block; /* чтобы корректно работало внутри текста */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #searchInput {
+    width: 95%;
+  }
+  #suggestions li {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .highlight-section input {
+    width: 90%;
+  }
+}
+
+/* === Filter Label Styling === */
+label[for="productFilter"] {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b22222; /* основной красный цвет */
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ffe4e1, #fff0f0);
+  box-shadow: 0 2px 6px rgba(178, 34, 34, 0.2);
+}
+
+label[for="productFilter"]:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #b22222, #ff6b6b);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(178, 34, 34, 0.4);
+}
+
+/* === Filter Select Styling (Compact & Soft) === */
+select {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #b22222;
+  border: 1.5px solid #f4baba;
+  border-radius: 6px;
+  background: #fff8f8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none; /* убирает стандартный стиль стрелки */
+  box-shadow: 0 2px 6px rgba(178, 34, 34, 0.15);
+}
+
+select:hover {
+  background: #fff0f0;
+  border-color: #e8a1a1;
+  transform: scale(1.02);
+  box-shadow: 0 3px 8px rgba(178, 34, 34, 0.2);
+}
+
+select:focus {
+  outline: none;
+  border-color: #b22222;
+  box-shadow: 0 0 6px rgba(178, 34, 34, 0.25);
+}
+
+/* === Filter Block Container === */
+.filter-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 15px;
+  max-width: 220px;
+}
+
+/* === Label Styling === */
+.filter-block label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #b22222; /* обычный красный */
+  padding: 4px 8px;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+/* === Select Styling === */
+.filter-block select {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #b22222; 
+  border: 1.5px solid #b22222;
+  border-radius: 6px;
+  background: #fff8f8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  box-shadow: 0 2px 4px rgba(178, 34, 34, 0.1);
+}
+
+/* При hover на select — label меняет цвет */
+.filter-block select:hover + label,
+.filter-block select:focus + label {
+  color: #ff0000; /* ярко-красный */
+}
+
+/* Hover/Focus сам select */
+.filter-block select:hover {
+  background: #fff8f8;
+  border-color: #b22222;
+  transform: scale(1.02);
+  box-shadow: 0 3px 6px rgba(178, 34, 34, 0.15);
+}
+
+.filter-block select:focus {
+  outline: none;
+  border-color: #b22222;
+  box-shadow: 0 0 6px rgba(178, 34, 34, 0.2);
+}
+
+
+
+/* === Footer === */
+.footer {
+  grid-area: footer;
+  background: #b22222;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Mochi Ice Cream",
+    "description": "Chewy rice cakes with ice cream filling.",
+    "price": "$7",
+    "img": "images/mochi_icecream.jpg",
+    "overlay": "Sweet mochi"
+  },
+  {
+    "name": "Matcha Cake",
+    "description": "Green tea flavored sponge cake with cream.",
+    "price": "$8",
+    "img": "images/matcha_cake.jpg",
+    "overlay": "Delicious matcha cake"
+  },
+  {
+    "name": "Dorayaki Deluxe",
+    "description": "Soft pancakes filled with sweet red bean paste and cream.",
+    "price": "$9",
+    "img": "images/dorayaki_deluxe.jpg",
+    "overlay": "Sweet dorayaki"
+  }
+]

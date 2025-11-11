@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Beef Teriyaki",
+    "description": "Grilled beef glazed with teriyaki sauce, served with rice.",
+    "price": "$20",
+    "img": "images/beef_teriyaki.jpg",
+    "overlay": "Juicy beef steak"
+  },
+  {
+    "name": "Tempura Set",
+    "description": "Assorted tempura vegetables and shrimp served with sauce.",
+    "price": "$18",
+    "img": "images/tempura_set.jpg",
+    "overlay": "Crispy tempura"
+  },
+  {
+    "name": "Chicken Katsu",
+    "description": "Deep-fried chicken cutlet served with rice and salad.",
+    "price": "$17",
+    "img": "images/chicken_katsu.jpg",
+    "overlay": "Crispy chicken"
+  }
+]

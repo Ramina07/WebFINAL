@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Oishiro</title>
+  <link rel="stylesheet" href="contact.css">
+ 
+
+
+
+</head>
+<body class="contact-page">
+<div id="notification-container"></div>
+
+
+    <div class="container">
+
+  <!-- Navigation -->
+  <header class="header">
+  <nav>
+    <div class="logo">Oishiro</div>
+    <ul id ="nav-menu">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="menu.html" >Menu</a></li>
+      <li><a href="indexr.html" tabindex="0">About</a></li>
+      <li><a href="contact.html" class="active" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <!-- Sidebar -->
+<aside class="sidebar">
+  <h3>More</h3>
+  <ul>
+    <li><a href="indexr.html">Upcoming Events</a></li>
+    <li><a href="indexr.html">Interior Design</a></li>
+    <li><a href="indexr.html">Customer Reviews</a></li>
+    
+  </ul>
+
+<div class="about-more-container">
+  <h3>More About Us</h3>
+  <button id="load-info-btn">Learn More About Us</button>
+  <div id="info-result"></div>
+</div>
+
+<hr class="sidebar-divider">
+
+
+  <h3>Reserve Private Dining</h3>
+
+  <form id="privateFormSidebar" class="sidebar-form">
+    <!-- Шаг 1 -->
+    <div class="form-step step-active">
+      <label for="guestName">Name:</label>
+      <input type="text" id="guestName" name="guestName" required placeholder="Your name">
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Шаг 2 -->
+    <div class="form-step">
+      <label for="guests">Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" max="10" required>
+      <button type="button" class="back-btn">Back</button>
+      <button type="button" class="next-btn">Next</button>
+    </div>
+
+    <!-- Шаг 3 -->
+    <div class="form-step">
+      <label for="occasion">Occasion:</label>
+      <select id="occasion" name="occasion" required>
+        <option value="">Select occasion</option>
+        <option value="birthday">Birthday</option>
+        <option value="corporate">Corporate Event</option>
+        <option value="anniversary">Anniversary</option>
+      </select>
+      <button type="button" class="back-btn">Back</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</aside>
+<!-- Reservation Modal -->
+<div id="reservation-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="reservation-title"></h3>
+    <p id="reservation-description"></p>
+  </div>
+</div>
+
+
+
+
+ <main class="main-content">
+  <!-- Hero Section -->
+  <section class="menu-hero">
+    <div class="menu-hero-left">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Whether you want to book a table or ask about our menu, don’t hesitate to reach out.</p>
+    </div>
+    <div class="menu-hero-right">
+      <div class="menu-h1-wrapper">
+        <img src="image/p1.jpg" alt="Rotating Bowl" class="menu-h1">
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Контейнер с надписью и кнопкой -->
+<div class="contact-action-box">
+  <p class="contact-message-text">Click here to message us</p>
+  <button id="openPopupBtn" class="contact-popup-btn">Contact Us</button>
+</div>
+
+<!-- Затемнение фона и всплывающее окно -->
+<div id="popupForm" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-btn" id="closePopupBtn">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="contactName">Name:</label>
+      <input type="text" id="contactName" name="name" required>
+
+      <label for="contactEmail">Email:</label>
+      <input type="email" id="contactEmail" name="email" required>
+
+      <label for="contactMessage">Message:</label>
+      <textarea id="contactMessage" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- Restaurant Stats Section -->
+<section class="restaurant-stats">
+  <div class="stats-container">
+    <div class="stat-item">
+      <h3 class="counter" data-target="5">0</h3>
+      <p>Years in Business</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="counter" data-target="10">0</h3>
+      <p>Chefs</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="counter" data-target="2500">0</h3>
+      <p>Happy Diners</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="counter" data-target="500">0</h3>
+      <p>Reviews</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Information Section -->
+  <section class="contact-info">
+    <h3>Contact Information</h3>
+    <div class="info-box">
+  <p>
+    <strong>Phone:</strong> +7 775 567 8900
+    <button class="copy-btn" data-clipboard-text="+77755678900" title="Copy to clipboard">Copy</button>
+  </p>
+  <p>
+    <strong>Email:</strong> contact@oishiro.com
+    <button class="copy-btn" data-clipboard-text="contact@oishiro.com" title="Copy to clipboard">Copy</button>
+  </p>
+  <p><strong>Follow us on:</strong></p>
+  <ul>
+      <li><a href="https://facebook.com/Oishiro" target="_blank">Facebook</a></li>
+      <li><a href="https://instagram.com/Oishiro" target="_blank">Instagram</a></li>
+      <li><a href="https://twitter.com/Oishiro" target="_blank">Twitter</a></li>
+  </ul>
+</div>
+
+</section>
+
+
+  
+  <!-- Reservation Form -->
+<section class="reservation">
+  <h2 class="reservation-title">Table Reservation</h2> 
+  <form id="myForm">
+    <label for="resName">Name:</label>
+    <input type="text" id="resName" name="resName" required placeholder="Enter your name"><br>
+
+    <label for="resEmail">Email:</label>
+    <input type="text" id="resEmail" name="resEmail" required placeholder="Enter your email"><br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" required placeholder="Enter your phone"><br>
+
+    <label for="date">Reservation Date:</label>
+    <input type="text" id="date" name="date" required placeholder="DD.MM.YYYY"><br>
+
+    <label for="time">Reservation Time:</label>
+    <input type="text" id="time" name="time" required placeholder="HH:MM"><br>
+
+    <label for="promo">Promocode:</label>
+    <input type="text" id="resPromo" name="resPromo" required placeholder="Paste promocode"><br>
+
+    <button type="submit">Submit</button>
+  </form>
+   <!-- Место для вывода успешного сообщения -->
+  <div id="successMessage" style="display:none; color:green; margin-top:10px; font-weight:bold;">
+    Reservation successfully submitted!
+  </div>
+</section>
+
+<!-- Контейнер для двух заданий -->
+<section class="extra-tasks">
+
+  <!-- Task 4: Change Background Color -->
+  <div class="task-box">
+    <h3>Change Background Color</h3>
+    <button id="changeColorBtn">Change Color</button>
+  </div>
+
+  <!-- Task 5: Display Current Date and Time -->
+  <div class="task-box" id="dateTimeBox">
+    <h3>Current Date & Time</h3>
+    <p id="dateTimeDisplay">Loading...</p>
+  </div>
+
+</section>
+
+  </main>
+
+
+  <footer class="footer">
+    <p>Team: Oishiro | Members: Li Danel, Kuzhentayeva Ramina |</p>
+  </footer>
+
+  </div>
+<script src="cont.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="jquery-contact.js"></script>
+</body>
+</html>

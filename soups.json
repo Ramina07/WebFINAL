@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Miso Ramen",
+    "description": "Savory miso broth with noodles, tofu, and veggies.",
+    "price": "$10",
+    "img": "images/miso_ramen.jpg",
+    "overlay": "Miso noodle soup"
+  },
+  {
+    "name": "Chicken Udon",
+    "description": "Thick udon noodles in rich chicken broth.",
+    "price": "$11",
+    "img": "images/chicken_udon.jpg",
+    "overlay": "Udon noodle soup"
+  },
+  {
+    "name": "Spicy Ramen",
+    "description": "Noodles in hot spicy broth with vegetables and egg.",
+    "price": "$12",
+    "img": "images/spicy_ramen.jpg",
+    "overlay": "Spicy noodle soup"
+  }
+]
