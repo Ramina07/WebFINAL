@@ -5,11 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Oishiro</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="user.css"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="jquery-indexr.js"></script>
 
 </head>
 <body class="about-page">
+
+  <div id="siteBlocker">
+  <div class="auth-gate">
+    <h2 id="authTitle">Welcome!</h2>
+    <form id="siteAuthForm">
+      <input type="text" id="authName" placeholder="Name" required>
+      <input type="email" id="authEmail" placeholder="Email" required>
+      <input type="password" id="authPassword" placeholder="Password" required>
+      <div id="errorBox" class="error-box"></div>
+      <button type="submit" id="authSubmitBtn">Sign Up</button>
+    </form>
+    <p id="switchAuth">Already have an account? <span id="toggleAuth">Log In</span></p>
+  </div>
+</div>
+
   <!-- Scroll Progress Bar -->
 <div class="scroll-progress-container">
   <div class="scroll-progress-bar"></div>
@@ -42,6 +58,12 @@
       <li><a href="contact.html" tabindex="0">Contact</a></li>
     </ul>
   </nav>
+
+  <div id="userProfile" class="user-profile" style="display:none;">
+          <img src="images/user-icon.png" alt="User Icon" class="profile-icon">
+          <span id="userName"></span>
+          <button id="logoutBtn">Log Out</button>
+        </div>
 </header>
 
   <!-- Sidebar -->
@@ -345,6 +367,7 @@
 </div> 
 
 <script src="inder.js"></script>
+<script src="auth.js"></script> 
 <script src="cont.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="jquery-indexr.js"></script>
